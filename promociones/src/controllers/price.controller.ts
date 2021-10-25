@@ -1,19 +1,33 @@
 // Uncomment these imports to begin using these cool features!
 
-// import {inject} from '@loopback/core';
+import {inject} from '@loopback/core';
 import { Count, Filter, repository, Where } from '@loopback/repository';
 import { del, get, getModelSchemaRef, param, patch, post, put, requestBody } from '@loopback/rest';
 import { response } from '@loopback/rest';
 import {Price} from '../models';
 import {PriceRepository} from '../repositories';
+import {
+  Service
+} from '../services'
 
 
 export class PriceController {
 
   @repository(PriceRepository)
   priceRepository: PriceRepository;
-  constructor() {}
+  
+  constructor(
+    @inject('services.service')
+    protected service: Service
+  ) {}
 
+  @get('/service')
+  async services(): Promise<String>{
+    const zone = await this.service.zone("1");
+    console.log(zone);
+    return "servicio";
+    
+  }
 
   @post('/Price')
   async create(
