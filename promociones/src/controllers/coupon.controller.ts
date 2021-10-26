@@ -1,19 +1,49 @@
 // Uncomment these imports to begin using these cool features!
 
-//import {inject} from '@loopback/rest';
+import { inject } from '@loopback/core';
 import { Count, Filter, repository, Where } from '@loopback/repository';
 import { del, get, getModelSchemaRef, param, patch, post, put, requestBody } from '@loopback/rest';
 import { response } from '@loopback/rest';
+import { promises } from 'dns';
 import {Coupon} from '../models';
 import {CouponRepository} from '../repositories';
+import{
+  Servicec
+} from '../services'
 
 
 export class CouponController {
 
+  @repository(CouponRepository)
+  couponRepository : CouponRepository;
+
   constructor(
-    @repository(CouponRepository)
-    public couponRepository : CouponRepository, //public
+    @inject('services.Servicec') //injecta servicio de coupon
+    protected service: Servicec
   ) {}
+
+  @get('/ServiceCoupon/ MASTER')
+  async couponMaster(): Promise<String>{
+    const coupon = await this.service.coupon(.20)// porcentaje o cantidad ?
+    console.log(coupon);
+    return "Cupon Master20"
+  }
+
+  @get('/ServiceCoupon/ PERRITOFELI')
+  async couponPerritofeli(): Promise<String>{
+    const coupon = await this.service.coupon(.15)// porcentaje o cantidad ?
+    console.log(coupon);
+    return "Cupon PERRITOFELI"
+  }
+
+  @get('/ServiceCoupon/ NOJADO')
+  async couponNojado(): Promise<String>{
+    const coupon = await this.service.coupon(.10)// porcentaje o cantidad ?
+    console.log(coupon);
+    return "Cupon Nojado"
+  }
+
+  //CRUD
 
   @post('/Coupon')
   async create(

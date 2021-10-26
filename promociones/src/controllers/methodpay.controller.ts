@@ -1,20 +1,49 @@
 // Uncomment these imports to begin using these cool features!
 
-//import {inject} from '@loopback/rest';
+import {inject} from '@loopback/core';
 import { Count, Filter, repository, Where } from '@loopback/repository';
 import { del, get, getModelSchemaRef, param, patch, post, put, requestBody } from '@loopback/rest';
 import { response } from '@loopback/rest';
 import {MethodPay} from '../models';
-import {MethodPayRepository} from '../repositories';
+import {MethodPayRepository} from '../repositories'
+import{
+  Servicem
+} from "../services"
 
 
 export class MethodpayController {
 
+  @repository(MethodPayRepository)
+  methodPayRepository : MethodPayRepository
+
   constructor(
-    @repository(MethodPayRepository)
-    public methodPayRepository : MethodPayRepository,
+  @inject('services.servicep') //injecta servicio de price
+  protected service: Servicem    
   ) {}
 
+  @get("/ServiceMethod / Mastercard")
+  async methodMastercard(): Promise<String>{//string or bool
+    const method = await this.service.method("") // true si es bool 
+    console.log(method);
+    return "Mastercard"
+  }
+
+  @get("/ServiceMethod / Visa")
+  async methodVisa(): Promise<String>{//string or bool
+    const method = await this.service.method("") // true si es bool 
+    console.log(method);
+    return "Visa"
+  }
+
+  @get("/ServiceMethod / Paypal")
+  async methodPaypald(): Promise<String>{//string or bool
+    const method = await this.service.method("") // true si es bool 
+    console.log(method);
+    return "Paypal"
+  }
+
+
+// CRUD
   @post('/MethodPay')
   async create(
     @requestBody({

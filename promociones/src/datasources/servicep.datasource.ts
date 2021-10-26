@@ -1,9 +1,8 @@
 import {inject, lifeCycleObserver, LifeCycleObserver} from '@loopback/core';
-import { operation } from '@loopback/openapi-v3';
 import {juggler} from '@loopback/repository';
 
 const config = {
-  name: 'service',
+  name: 'servicep',
   connector: 'rest',
   baseURL: 'https://services.com',
   crud: false,
@@ -17,7 +16,7 @@ const config = {
     {
       template:{
         method: "GET",
-        url: "https://services.com/zone/{postalcode}"//definir parametros
+        url: "https://services.com/zone/{postalcode}"//define la zona por medio del codigo postal 
       },
       funtions:{
         zone:["postalcode"]// comunicacion de servicio
@@ -44,13 +43,13 @@ const config = {
 // gracefully. The `stop()` method is inherited from `juggler.DataSource`.
 // Learn more at https://loopback.io/doc/en/lb4/Life-cycle.html
 @lifeCycleObserver('datasource')
-export class ServiceDataSource extends juggler.DataSource
+export class ServicepDataSource extends juggler.DataSource
   implements LifeCycleObserver {
-  static dataSourceName = 'service';
+  static dataSourceName = 'servicep';
   static readonly defaultConfig = config;
 
   constructor(
-    @inject('datasources.config.service', {optional: true})
+    @inject('datasources.config.servicep', {optional: true})
     dsConfig: object = config,
   ) {
     super(dsConfig);

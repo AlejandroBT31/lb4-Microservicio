@@ -7,7 +7,7 @@ import { response } from '@loopback/rest';
 import {Price} from '../models';
 import {PriceRepository} from '../repositories';
 import {
-  Service
+  Servicep //servicio de precio
 } from '../services'
 
 
@@ -17,17 +17,18 @@ export class PriceController {
   priceRepository: PriceRepository;
   
   constructor(
-    @inject('services.service')
-    protected service: Service
+    @inject('services.servicep') //injecta servicio de price
+    protected service: Servicep
   ) {}
 
-  @get('/service')
+  @get('/servicePrice')
   async services(): Promise<String>{
-    const zone = await this.service.zone("1");
+    const zone = await this.service.zone("1"); //zone -> funtions datasource
     console.log(zone);
     return "servicio";
-    
   }
+
+// CRUD 
 
   @post('/Price')
   async create(
