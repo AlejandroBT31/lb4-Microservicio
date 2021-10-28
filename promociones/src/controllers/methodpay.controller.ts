@@ -6,9 +6,9 @@ import { del, get, getModelSchemaRef, param, patch, post, put, requestBody } fro
 import { response } from '@loopback/rest';
 import {MethodPay} from '../models';
 import {MethodPayRepository} from '../repositories'
-import{
+/*import{
   Servicem
-} from "../services"
+} from "../services"*/
 
 
 export class MethodpayController {
@@ -17,35 +17,29 @@ export class MethodpayController {
   methodPayRepository : MethodPayRepository
 
   constructor(
-  @inject('services.servicep') //injecta servicio de price
-  protected service: Servicem    
+  //@inject('services.servicep') //injecta servicio de price
+ // protected service: Servicem    
   ) {}
 
-<<<<<<< Updated upstream
-  @get("/ServiceMethod / Mastercard")
-=======
  /* @get("/ServiceMethod / Mastercard") //Obetenmos el metodo de pago 
->>>>>>> Stashed changes
   async methodMastercard(): Promise<String>{//string or bool
     const method = await this.service.method("") // true si es bool 
     console.log(method);
     return "Mastercard"
   }
-
   @get("/ServiceMethod / Visa")
   async methodVisa(): Promise<String>{//string or bool
     const method = await this.service.method("") // true si es bool 
     console.log(method);
     return "Visa"
   }
-
   @get("/ServiceMethod / Paypal")
   async methodPaypald(): Promise<String>{//string or bool
     const method = await this.service.method("") // true si es bool 
     console.log(method);
     return "Paypal"
   }
-
+*/
 
 // CRUD
   @post('/MethodPay')

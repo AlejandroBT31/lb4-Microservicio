@@ -13,7 +13,7 @@ const config = {
     }
   },
   operations:[
-    {
+    /*{
       template:{
         method: "GET",
         url: "https://services.com/coupon/{amount}"// parametro amoutn para hacer el descuento
@@ -35,7 +35,7 @@ const config = {
       funtions:{
         price:["Price", "zone", "amount"]
       } 
-    }
+    }*/
   ]
 };
 

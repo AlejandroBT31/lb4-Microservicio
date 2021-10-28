@@ -17,22 +17,17 @@ export class PriceController {
   priceRepository: PriceRepository;
   
   constructor(
-    @inject('services.servicep') //injecta servicio de price
-    protected service: Servicep
+  //  @inject('services.servicep') //injecta servicio de price
+    //protected service: Servicep
   ) {}
-<<<<<<< Updated upstream
-
-  @get('/servicePrice')
-=======
 /*
   @get('/servicePrice') //obtiene el precio 
->>>>>>> Stashed changes
   async services(): Promise<String>{
     const zone = await this.service.zone("1"); //zone -> funtions datasource
     console.log(zone);
     return "servicio";
   }
-
+*/
 // CRUD 
 
   @post('/Price')

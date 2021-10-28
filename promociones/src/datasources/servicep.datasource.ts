@@ -13,7 +13,7 @@ const config = {
     }
   },
   operations:[
-    {
+    /*{
       template:{
         method: "GET",
         url: "https://services.com/zone/{postalcode}"//definimos el precio de la zona por medio del codigo postal 
@@ -29,14 +29,13 @@ const config = {
         forms:{
           "zone": "^{zone}", // zona 
           "price": "^{price}", // precio 
-          "discount" "^{discount}" // si llega a existir un descuento 
+          "discount": "^{discount}" // si llega a existir un descuento 
           }
-        }
       },
       funtions:{
         price:["Price", "zone"]
       } 
-    }
+    }*/
   ]
 };
 

@@ -13,7 +13,7 @@ const config = {
     }
   },
   operations:[
-    {
+    /*{
       template:{
         method: "GET",
         url: "https://services.com/methodpay/{method}"//definimos el methodo de pago -> visa mastercard paypal y coupon 
@@ -29,14 +29,14 @@ const config = {
         forms:{
           "method": "^{method}", // visa, paypal mastercard
           "zone": "^{zone}", // zona 
-          "amount": "^{amount}" // monto 
+          "amount": "^{amount}", // monto 
           "coupon": "^{coupon}" //si se llega a poner cupon para descuento
         }
       },
       funtions:{
         price:["method", "zone", "amount", "coupon"]
       } 
-    }
+    }*/
   ]
 };
 
