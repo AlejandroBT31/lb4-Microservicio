@@ -2,7 +2,7 @@ import {inject, lifeCycleObserver, LifeCycleObserver} from '@loopback/core';
 import {juggler} from '@loopback/repository';
 
 const config = {
-  name: 'servicep',
+  name: 'servicep', // Service Price
   connector: 'rest',
   baseURL: 'https://services.com',
   crud: false,
@@ -16,7 +16,7 @@ const config = {
     {
       template:{
         method: "GET",
-        url: "https://services.com/zone/{postalcode}"//define la zona por medio del codigo postal 
+        url: "https://services.com/zone/{postalcode}"//definimos el precio de la zona por medio del codigo postal 
       },
       funtions:{
         zone:["postalcode"]// comunicacion de servicio
@@ -27,8 +27,10 @@ const config = {
         method: "POST",
         url: "https://services.com/zone",
         forms:{
-          "zone": "^{zone}",
-          "price": "^{price}",
+          "zone": "^{zone}", // zona 
+          "price": "^{price}", // precio 
+          "discount" "^{discount}" // si llega a existir un descuento 
+          }
         }
       },
       funtions:{

@@ -2,7 +2,7 @@ import {inject, lifeCycleObserver, LifeCycleObserver} from '@loopback/core';
 import {juggler} from '@loopback/repository';
 
 const config = {
-  name: 'servicec',
+  name: 'servicec',//Service Coupon 
   connector: 'rest',
   baseURL: 'https://services.com',
   crud: false,
@@ -16,7 +16,7 @@ const config = {
     {
       template:{
         method: "GET",
-        url: "https://services.com/coupon/{amount}"//definir parametros
+        url: "https://services.com/coupon/{amount}"// parametro amoutn para hacer el descuento
       },
       funtions:{
         coupon:["amount"]// comunicacion de servicio //amount or price ?
@@ -28,7 +28,7 @@ const config = {
         url: "https://services.com/coupon",
         forms:{
           "zone": "^{zone}",
-          "price": "^{price}",
+          "price": "^{price}", // ?existe
           "amount": "^{amount}"
         }
       },

@@ -22,7 +22,11 @@ export class CouponController {
     protected service: Servicec
   ) {}
 
+<<<<<<< Updated upstream
   @get('/ServiceCoupon/ MASTER')
+=======
+  /*@get('/ServiceCoupon/ MASTER') //Obtemos cupon 
+>>>>>>> Stashed changes
   async couponMaster(): Promise<String>{
     const coupon = await this.service.coupon(.20)// porcentaje o cantidad ?
     console.log(coupon);
@@ -42,7 +46,11 @@ export class CouponController {
     console.log(coupon);
     return "Cupon Nojado"
   }
+<<<<<<< Updated upstream
 
+=======
+*///hacer uno con los cupones 
+>>>>>>> Stashed changes
   //CRUD
 
   @post('/Coupon')

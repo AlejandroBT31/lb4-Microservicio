@@ -21,7 +21,11 @@ export class MethodpayController {
   protected service: Servicem    
   ) {}
 
+<<<<<<< Updated upstream
   @get("/ServiceMethod / Mastercard")
+=======
+ /* @get("/ServiceMethod / Mastercard") //Obetenmos el metodo de pago 
+>>>>>>> Stashed changes
   async methodMastercard(): Promise<String>{//string or bool
     const method = await this.service.method("") // true si es bool 
     console.log(method);

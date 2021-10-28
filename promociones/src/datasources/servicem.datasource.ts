@@ -2,7 +2,7 @@ import {inject, lifeCycleObserver, LifeCycleObserver} from '@loopback/core';
 import {juggler} from '@loopback/repository';
 
 const config = {
-  name: 'servicem',
+  name: 'servicem', //Service MethodPAy
   connector: 'rest',
   baseURL: 'https://services.com',
   crud: false,
@@ -16,7 +16,7 @@ const config = {
     {
       template:{
         method: "GET",
-        url: "https://services.com/methodpay/{method}"//definir parametros
+        url: "https://services.com/methodpay/{method}"//definimos el methodo de pago -> visa mastercard paypal y coupon 
       },
       funtions:{
         method:["method"]// comunicacion de servicio
@@ -27,13 +27,14 @@ const config = {
         method: "POST",
         url: "https://services.com/method",
         forms:{
-          "method": "^{method}",
-          "price": "^{price}",
-          "amount": "^{amount}"
+          "method": "^{method}", // visa, paypal mastercard
+          "zone": "^{zone}", // zona 
+          "amount": "^{amount}" // monto 
+          "coupon": "^{coupon}" //si se llega a poner cupon para descuento
         }
       },
       funtions:{
-        price:["Price", "method", "amount"]
+        price:["method", "zone", "amount", "coupon"]
       } 
     }
   ]
