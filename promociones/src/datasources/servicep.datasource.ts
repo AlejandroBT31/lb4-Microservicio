@@ -29,8 +29,14 @@ const config = {
         forms:{
           "zone": "^{zone}", // zona 
           "price": "^{price}", // precio 
+<<<<<<< Updated upstream
           "discount": "^{discount}" // si llega a existir un descuento 
           }
+=======
+          "discount" "^{discount}" // si llega a existir un descuento 
+          }
+        }
+>>>>>>> Stashed changes
       },
       funtions:{
         price:["Price", "zone"]

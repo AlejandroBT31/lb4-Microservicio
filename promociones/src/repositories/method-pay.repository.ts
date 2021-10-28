@@ -9,7 +9,11 @@ export class MethodPayRepository extends DefaultCrudRepository<
   MethodPayRelations
 > {
   constructor(
+<<<<<<< Updated upstream
     @inject('datasources.monngoDB') dataSource: MonngoDbDataSource,
+=======
+    @inject('datasources.mongodb') dataSource: MonngoDbDataSource,
+>>>>>>> Stashed changes
   ) {
     super(MethodPay, dataSource);
   }

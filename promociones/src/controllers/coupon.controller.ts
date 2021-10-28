@@ -42,7 +42,10 @@ export class CouponController {
     console.log(coupon);
     return "Cupon Nojado"
   }
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes
 *///hacer uno con los cupones 
   //CRUD
 

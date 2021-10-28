@@ -9,7 +9,11 @@ export class CouponRepository extends DefaultCrudRepository<
   CouponRelations
 > {
   constructor(
+<<<<<<< Updated upstream
     @inject('datasources.monngoDB') dataSource: MonngoDbDataSource,
+=======
+    @inject('datasources.mongodb') dataSource: MonngoDbDataSource,
+>>>>>>> Stashed changes
   ) {
     super(Coupon, dataSource);
   }

@@ -9,7 +9,11 @@ export class PriceRepository extends DefaultCrudRepository<
   PriceRelations
 > {
   constructor(
+<<<<<<< Updated upstream
     @inject('datasources.monngoDB') dataSource: MonngoDbDataSource,
+=======
+    @inject('datasources.mongodb') dataSource: MonngoDbDataSource,
+>>>>>>> Stashed changes
   ) {
     super(Price, dataSource);
   }

@@ -29,7 +29,11 @@ const config = {
         forms:{
           "method": "^{method}", // visa, paypal mastercard
           "zone": "^{zone}", // zona 
+<<<<<<< Updated upstream
           "amount": "^{amount}", // monto 
+=======
+          "amount": "^{amount}" // monto 
+>>>>>>> Stashed changes
           "coupon": "^{coupon}" //si se llega a poner cupon para descuento
         }
       },
