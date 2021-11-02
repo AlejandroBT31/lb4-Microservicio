@@ -57,11 +57,14 @@ typings/
 # dotenv environment variables file
 .env
 
-# Transpiled JavaScript files from Typescript
-/dist
+# Generated apidocs
+api-docs/
 
-# Cache used by TypeScript's incremental build
+# Transpiled JavaScript files from Typescript
+dist*/
 *.tsbuildinfo
 
-#Heroku 
-node_modules
+.DS_Store
+.eslintcache
+
+docker-build
